@@ -7,7 +7,8 @@ namespace LotteryService
         public int[] SortNumbers(int[] lotteryNums)
         {
             //throw new NotImplementedException();
-           // Array.Sort(lotteryNums);
+            // Array.Sort(lotteryNums);
+            int swapCounter = 0;
            for(int j = 0; j < lotteryNums.Length; j++)
            {
                 for (int i = 0; i < lotteryNums.Length - 1; i++)
@@ -17,6 +18,8 @@ namespace LotteryService
                         int temp = lotteryNums[i];
                         lotteryNums[i] = lotteryNums[i + 1];
                         lotteryNums[i + 1] = temp;
+                        swapCounter += 1;
+                        Console.WriteLine("swap counter: " + swapCounter);
                     }
                 }
                 Console.WriteLine("in" + String.Join(",", lotteryNums));
