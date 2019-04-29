@@ -19,14 +19,14 @@ namespace Tests
         public void return_OneNumSorted()
         {
             int[] lotteryNumberReturns1 = new int[1];
-            var expected = 2;
+           
             int[] actual = _testService.SortNumbers(lotteryNumberReturns1);
             System.Console.WriteLine("actual: " + actual.ToString());
             Assert.AreEqual(new int[1], actual);
         }
 
 
-        /*
+        
         [Test]
         public void return_twoNumSorted()
         {
@@ -37,6 +37,7 @@ namespace Tests
             Assert.AreEqual(new int[2] { 7, 8 }, actual);
 
         }
+        /*
         [Test]
         public void return_threeNumSorted()
         {
