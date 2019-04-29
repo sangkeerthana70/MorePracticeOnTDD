@@ -48,7 +48,7 @@ namespace Tests
             Assert.AreEqual(new int[3] { 87, 99, 100}, actual);
 
         }
-        /*
+        
         [Test]
         public void return_tenNumSorted()
         {
@@ -58,6 +58,6 @@ namespace Tests
             System.Console.WriteLine("actual: " + actual);
             Assert.AreEqual(new int[10] { 1, 2, 3, 6, 8, 10, 20, 87, 99, 100 }, actual);
         }
-        */
+        
     }
 }
