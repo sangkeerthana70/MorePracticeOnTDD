@@ -37,7 +37,7 @@ namespace Tests
             Assert.AreEqual(new int[2] { 7, 8 }, actual);
 
         }
-        /*
+        
         [Test]
         public void return_threeNumSorted()
         {
@@ -48,6 +48,7 @@ namespace Tests
             Assert.AreEqual(new int[3] { 87, 99, 100}, actual);
 
         }
+        /*
         [Test]
         public void return_tenNumSorted()
         {
