@@ -18,10 +18,8 @@ namespace Tests
         [Test]
         public void return_OneNumSorted()
         {
-            int[] lotteryNumberReturns1 = new int[1];
-           
+            int[] lotteryNumberReturns1 = new int[1];          
             int[] actual = _testService.SortNumbers(lotteryNumberReturns1);
-            System.Console.WriteLine("actual: " + actual.ToString());
             Assert.AreEqual(new int[1], actual);
         }
 
@@ -30,10 +28,8 @@ namespace Tests
         [Test]
         public void return_twoNumSorted()
         {
-            int[] lotteryNumberReturnsTwoNumSorted = new int[2] { 8, 7 };
-            
-            int[] actual = _testService.SortNumbers(lotteryNumberReturnsTwoNumSorted);
-            System.Console.WriteLine("actual: " + actual);
+            int[] lotteryNumberReturnsTwoNumSorted = new int[2] { 8, 7 };            
+            int[] actual = _testService.SortNumbers(lotteryNumberReturnsTwoNumSorted);          
             Assert.AreEqual(new int[2] { 7, 8 }, actual);
 
         }
@@ -42,9 +38,7 @@ namespace Tests
         public void return_threeNumSorted()
         {
             int[] lotteryNumberReturnsThreeNumSorted = new int[3] { 100 , 99 ,87 };
-
-            int[] actual = _testService.SortNumbers(lotteryNumberReturnsThreeNumSorted);
-            System.Console.WriteLine("actual: " + actual);
+            int[] actual = _testService.SortNumbers(lotteryNumberReturnsThreeNumSorted);           
             Assert.AreEqual(new int[3] { 87, 99, 100}, actual);
 
         }
@@ -53,9 +47,7 @@ namespace Tests
         public void return_tenNumSorted()
         {
             int[] lotteryNumberReturnsTenNumSorted = new int[10] { 100, 99, 87, 3, 6, 1, 2, 8, 20,10 };
-
-            int[] actual = _testService.SortNumbers(lotteryNumberReturnsTenNumSorted);
-            System.Console.WriteLine("actual: " + actual);
+            int[] actual = _testService.SortNumbers(lotteryNumberReturnsTenNumSorted);           
             Assert.AreEqual(new int[10] { 1, 2, 3, 6, 8, 10, 20, 87, 99, 100 }, actual);
         }
         
