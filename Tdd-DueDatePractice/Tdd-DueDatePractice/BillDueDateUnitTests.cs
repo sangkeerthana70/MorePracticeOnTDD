@@ -49,6 +49,7 @@ namespace Tdd_DueDatePractice
             [Test]
             public void ifHoliday_ReturnNonHoliday()
             {
+                // input is friday expected output should be Monday
                 var input = new DateTime(2018, 8, 3);
                 var mockHolidayService = new HolidayService();
                 var _bill = new Bill(mockHolidayService);
@@ -60,6 +61,7 @@ namespace Tdd_DueDatePractice
             [Test]
             public void ifHoliday_ReturnWeekday()
             {
+                // input is a holiday on tuesday expect output the next day which is a weekday
                 var input = new DateTime(2018, 12, 25);
                 var mockHolidayService = new HolidayService();
                 var _bill = new Bill(mockHolidayService);

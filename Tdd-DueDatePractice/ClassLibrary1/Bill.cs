@@ -39,36 +39,23 @@ namespace Tdd_DueDatePractice
                      return dueDate.AddDays(1);
 
                  }
-
-
              }
-
-
-
-
-             return dueDate;
-
-
-         
+             return dueDate;         
          */
-            int i = 0;
+
+            
             while (true)
             {
                 if ((dueDate.DayOfWeek == DayOfWeek.Saturday) ||
                     (dueDate.DayOfWeek == DayOfWeek.Sunday) ||
-                    holidayService.isHoliday(dueDate))
-                {
-                    Console.WriteLine("i :" + i);
-                    dueDate = dueDate.AddDays(1);
-                    Console.WriteLine("duedate: " + dueDate);
+                    (holidayService.isHoliday(dueDate)))
+                {                    
+                    dueDate = dueDate.AddDays(1);                   
                 }
                 else
                 {
                     return dueDate;
-                }
-                i++;
-                Console.WriteLine("due after while: " + dueDate);
-
+                }               
             }
         }
     }
