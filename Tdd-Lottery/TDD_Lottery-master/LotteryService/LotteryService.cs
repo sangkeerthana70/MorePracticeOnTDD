@@ -11,6 +11,7 @@ namespace LotteryService
             int swapCounter = 0;
            for(int j = 0; j < lotteryNums.Length; j++)
            {
+                int x = 0;
                 for (int i = 0; i < lotteryNums.Length - 1; i++)
                 {
                     if (lotteryNums[i] > lotteryNums[i + 1])
@@ -19,13 +20,14 @@ namespace LotteryService
                         lotteryNums[i] = lotteryNums[i + 1];
                         lotteryNums[i + 1] = temp;
                         swapCounter += 1;
-                        //Console.WriteLine("swap counter: " + swapCounter);
+                        Console.WriteLine("swap counter: " + swapCounter);
+                        x++;
                     }
                 }
-                //Console.WriteLine("in" + String.Join(",", lotteryNums));
+                Console.WriteLine("in " + x + " "+ String.Join(",", lotteryNums));
             }
            
-           //Console.WriteLine("out" + String.Join(",", lotteryNums));
+           Console.WriteLine("out" + String.Join(",", lotteryNums));
             return lotteryNums;
         }
     }
