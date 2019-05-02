@@ -18,37 +18,58 @@ namespace Tdd_DueDatePractice
         public DateTime CheckDate(DateTime dueDate)
         {
             //throw new NotImplementedException();
-            
-           if(dueDate.DayOfWeek == DayOfWeek.Saturday)
-           {
-                return dueDate.AddDays(2);
-           }
-           if(dueDate.DayOfWeek == DayOfWeek.Sunday)
-           {
-                return dueDate.AddDays(1);
-           }
-           
-            if(holidayService.isHoliday(dueDate))
+            /* 
+            if(dueDate.DayOfWeek == DayOfWeek.Saturday)
             {
-                if(dueDate.DayOfWeek == DayOfWeek.Friday)
+                 return dueDate.AddDays(2);
+            }
+            if(dueDate.DayOfWeek == DayOfWeek.Sunday)
+            {
+                 return dueDate.AddDays(1);
+            }
+
+             if(holidayService.isHoliday(dueDate))
+             {
+                 if(dueDate.DayOfWeek == DayOfWeek.Friday)
+                 {
+                     return dueDate.AddDays(3);
+                 }
+                 else
+                 {
+                     return dueDate.AddDays(1);
+
+                 }
+
+
+             }
+
+
+
+
+             return dueDate;
+
+
+         
+         */
+            int i = 0;
+            while (true)
+            {
+                if ((dueDate.DayOfWeek == DayOfWeek.Saturday) ||
+                    (dueDate.DayOfWeek == DayOfWeek.Sunday) ||
+                    holidayService.isHoliday(dueDate))
                 {
-                    return dueDate.AddDays(3);
+                    Console.WriteLine("i :" + i);
+                    dueDate = dueDate.AddDays(1);
+                    Console.WriteLine("duedate: " + dueDate);
                 }
                 else
                 {
-                    return dueDate.AddDays(1);
-
+                    return dueDate;
                 }
-                
-              
+                i++;
+                Console.WriteLine("due after while: " + dueDate);
+
             }
-
-            
-
-
-            return dueDate;
-            
-            
         }
     }
 }
