@@ -13,10 +13,20 @@ namespace launchSequenceChecker_Tdd
         [Test]
         public void checkIfEmptyArrayInputReturnsCorrectReturnDatatype()
         {
-            string[] systemNames = new string[] {"" };
+            string[] systemNames = new string[] { };
             int[] stepNumbers = new int[] { };
             checkLaunchSequence cLS = new checkLaunchSequence();
             
+            var expected = cLS.launchSequenceChecker(systemNames, stepNumbers);
+            Assert.AreEqual(expected, true);
+        }
+
+        [Test]
+        public void checkForBothInputArraysLengthToBeEqual()
+        {
+            string[] systemNames = new string[] { "stage_1", "stage_1" };
+            int[] stepNumbers = new int[] { 100 };
+            checkLaunchSequence cLS = new checkLaunchSequence();
             var expected = cLS.launchSequenceChecker(systemNames, stepNumbers);
             Assert.AreEqual(expected, true);
         }
@@ -32,21 +42,5 @@ namespace launchSequenceChecker_Tdd
             Assert.AreEqual(expected, false);
         }
 
-        [Test]
-        public void checkIfIncreasingSequenceForASystemReturnsTrue()
-        {
-            string[] systemNames = new string[] { "stage_1", "stage_1" };
-            int[] stepNumbers = new int[] { 1, 2 };
-            checkLaunchSequence cLS = new checkLaunchSequence();
-
-            var expected = cLS.launchSequenceChecker(systemNames, stepNumbers);
-            Assert.AreEqual(expected, true);
-        }
-
-        [Test]
-        public void checkForMultipleSystemAndDecreasingSequence()
-        {
-           
-        }
     }
 }
