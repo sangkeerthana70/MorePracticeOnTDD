@@ -5,33 +5,44 @@ namespace SmallestService
 {
     public class Finder
     {
-       
+
 
         public int FindSmallestInt(int[] input)
         {
             //throw new NotImplementedException();
-            if(input.Length == 0)
+            if (input.Length == 0)
             {
-                throw new  System.ArgumentException("the array cannot be empty");
-                
+                throw new System.ArgumentException("the array cannot be empty");
+
             }
-            
-            if(input.Length == 1)
+
+            else if (input.Length == 1)
             {
                 return input[0];
             }
 
-            int minVal = Int32.MaxValue;
-            Console.WriteLine("minVal: " + minVal);
-            for(int i = 0; i < input.Length; i++)
+            else if (input.Length == 2)
             {
-                if(input[i] < minVal)
+                if (input[0] < input[1])
                 {
-                    minVal = input[i];
+                    return input[0];
                 }
-
+                else return input[1];
             }
-            return minVal;
+            else
+            {
+                int minVal = Int32.MaxValue;                
+                for (int i = 0; i < input.Length; i++)
+                {
+                    if (input[i] < minVal)
+                    {
+                        minVal = input[i];
+                    }
+
+                }
+                return minVal;
+            }
+            
             
         }
 
