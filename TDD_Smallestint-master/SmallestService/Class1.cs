@@ -31,25 +31,61 @@ namespace SmallestService
             }
             else
             {
-                int minVal = Int32.MaxValue;                
-                for (int i = 0; i < input.Length; i++)
+                int minVal = int.MaxValue;
+                for(int i = 0; i < input.Length; i++)
                 {
-                    if (input[i] < minVal)
+                    if(input[i] < minVal)
                     {
                         minVal = input[i];
                     }
-
                 }
                 return minVal;
             }
-            
             
         }
 
         public int FindClosestIntToZero(int[] input)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if (input.Length == 0)
+            {
+                throw new ArgumentException("array cannot be empty");
+            }
+            else if (input.Length == 1)
+                return 1;
+            else if (input.Length == 2)
+            {
+                return (input[0] < input[1]) ? input[0] : input[1];
+            }
+            else
+            {
+                int maxVal = Int32.MaxValue;
+                /*
+                foreach(int num in input)
+                {
+                    if(num < maxVal)
+                    {
+                        maxVal = num;
+                        Console.WriteLine("maxValue : " + maxVal);
+                    }
+                }
+                */
 
+                for (int i = 0; i < input.Length; i++)
+                {
+                    if(Math.Abs(input[i]) < Math.Abs(maxVal))
+                    {
+                        maxVal = input[i];
+                    }
+
+                    if((Math.Abs(input[i]) == Math.Abs(maxVal)) && (input[i] < maxVal))
+                    {
+                        maxVal = input[i];
+                    }
+                }
+                return maxVal;
+            }
+            
         }
     }
 }
