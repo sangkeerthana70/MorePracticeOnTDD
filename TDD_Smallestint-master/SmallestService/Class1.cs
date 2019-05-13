@@ -59,7 +59,7 @@ namespace SmallestService
             }
             else
             {
-                int maxVal = Int32.MaxValue;
+                int maxVal = input[0];
                 /*
                 foreach(int num in input)
                 {
@@ -71,7 +71,7 @@ namespace SmallestService
                 }
                 */
 
-                for (int i = 0; i < input.Length; i++)
+                for (int i = 1; i < input.Length; i++)
                 {
                     if(Math.Abs(input[i]) < Math.Abs(maxVal))
                     {
