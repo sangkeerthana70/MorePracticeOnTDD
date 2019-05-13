@@ -31,8 +31,8 @@ namespace SmallestService
             }
             else
             {
-                int minVal = int.MaxValue;
-                for(int i = 0; i < input.Length; i++)
+                int minVal = input[0];
+                for(int i = 1; i < input.Length; i++)
                 {
                     if(input[i] < minVal)
                     {
