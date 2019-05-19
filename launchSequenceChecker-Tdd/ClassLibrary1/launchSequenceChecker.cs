@@ -16,14 +16,16 @@ namespace launchSequenceCheckerTdd
                 return true;
             }
 
+            /*
             if(systemNames.Length != stepNumbers.Length)
             {
                 throw new ArgumentException("the length of the input arrays are not equal");
                
             }
-           
-            
+            */
 
+
+            /*
             for (int i = 0; i < stepNumbers.Length - 1; i++)
             {
 
@@ -35,7 +37,30 @@ namespace launchSequenceCheckerTdd
                 }
             }
             return true;
+            */
+
+            for (int i = 0; i < systemNames.Length; i++)
+            {
+                Console.WriteLine("i: " + i);
+                Console.WriteLine(systemNames[i]);
+                for (int j = i + 1; i < systemNames.Length; j++)
+                {
+                    Console.WriteLine("j: " + j);
+                    if(systemNames[i] == systemNames[j])
+                    {
+                        Console.WriteLine(systemNames[j]);
+                        Console.WriteLine("found a match");
+                        if(stepNumbers[i] > stepNumbers[j])
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+
         }
+        
 
             
             
