@@ -35,6 +35,22 @@ namespace Conway_sGameOfLifeTDD
                 Assert.AreEqual("dead", result);
 
             }
+
+            [Test]
+            [TestCase("alive", 2)]
+            [TestCase("alive", 3)]
+            public void Live_Cell_With_Two_Or_Three_Live_Neighbors_Lives(string currentState, int numberOfLiveNeighbors)
+            {
+                // Any live cell with two or three live neighbors lives
+                // Arrange
+                //string currentState = "";
+                //int numberOfLiveNeighbors = 0;
+
+                //Act
+                string newState = LifeRules.GetNewState(currentState, numberOfLiveNeighbors);
+                //Assert
+                Assert.AreEqual("alive", newState);
+            }
         }
     }
 }

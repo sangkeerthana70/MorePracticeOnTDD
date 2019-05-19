@@ -17,7 +17,13 @@ namespace GameOfLife.Library
             {
                 newState = "dead";
             }
+
+            if(currentState == "alive" && numLiveNeighbors == 2 || numLiveNeighbors == 3)
+            {
+                newState = "alive";
+            }
             return newState;
         }
+
     }
 }
