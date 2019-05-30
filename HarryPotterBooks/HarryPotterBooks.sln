@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HarryPotterBooks", "HarryPotterBooks\HarryPotterBooks.csproj", "{75014E1A-5DDC-4238-8DEC-BE6FECEAFED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreServices", "BookStoreServices.cs\BookStoreServices.csproj", "{B17FC1CE-3DD3-451D-B62C-265E9CFCFC44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75014E1A-5DDC-4238-8DEC-BE6FECEAFED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75014E1A-5DDC-4238-8DEC-BE6FECEAFED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75014E1A-5DDC-4238-8DEC-BE6FECEAFED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75014E1A-5DDC-4238-8DEC-BE6FECEAFED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17FC1CE-3DD3-451D-B62C-265E9CFCFC44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17FC1CE-3DD3-451D-B62C-265E9CFCFC44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17FC1CE-3DD3-451D-B62C-265E9CFCFC44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17FC1CE-3DD3-451D-B62C-265E9CFCFC44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0C8EE52-F022-4D59-9EFA-716B8645F310}
+	EndGlobalSection
+EndGlobal
