@@ -16,9 +16,12 @@ namespace BookStoreServices
 
         public double BookCost(int noOfBooks, string[] titles)
         {
-            double totalBookCost = 8;
             //throw new NotImplementedException();
-            if(noOfBooks == 1)
+            double totalBookCost = 8;
+            float discount = 0;
+            float discountPrice = 0;
+
+            if (noOfBooks == 1)
             {
                 return totalBookCost;
             }
@@ -26,8 +29,8 @@ namespace BookStoreServices
             {
                 if (!(titles[0].Equals(titles[1])))
                 {
-                    float discount = 5 ;
-                    float discountPrice = discount / 100;
+                    discount = 5 ;
+                    discountPrice = discount / 100;
                     Console.WriteLine("discountPrice: " + discountPrice);
                     totalBookCost = (2 * totalBookCost) - discountPrice;
                     Console.WriteLine("totalBookCost " + totalBookCost);
