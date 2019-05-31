@@ -59,14 +59,14 @@ namespace HarryPotterBooks
             double expected = 8;
             var BookStore = new BookStore();
             double actual = BookStore.BookCost(bookOrder);
-            Console.WriteLine("actual: " + actual);
+            //Console.WriteLine("actual: " + actual);
             Assert.AreEqual(expected, actual);
  
                     
         }
         
         [Test]
-        public void CostOfTwoBookWithDifferentTitleNames_ShouldDiscount_FivePercent()
+        public void CostOfTwoBooksWithDifferentTitleNames_ShouldDiscount_FivePercent()
         {
 
             Dictionary<string, int> bookOrder = new Dictionary<string, int>();
@@ -76,11 +76,11 @@ namespace HarryPotterBooks
             double expected = 15.20;
             var BookStore = new BookStore();
             double actual = BookStore.BookCost(bookOrder);
-            Console.WriteLine("actual: " + actual);
+            //Console.WriteLine("actual: " + actual);
             Assert.AreEqual(expected, actual);
         }
         [Test]
-        public void CostOfTwoBookWithSameTitleNames_ShouldDiscount_zeroPercent()
+        public void CostOfTwoBooksWithSameTitleNames_ShouldDiscount_zeroPercent()
         {
 
             Dictionary<string, int> bookOrder = new Dictionary<string, int>();
@@ -89,7 +89,7 @@ namespace HarryPotterBooks
             double expected = 16.00;
             var BookStore = new BookStore();
             double actual = BookStore.BookCost(bookOrder);
-            Console.WriteLine("actual: " + actual);
+            //Console.WriteLine("actual: " + actual);
             Assert.AreEqual(expected, actual);
 
 

@@ -10,8 +10,8 @@ namespace BookStoreServices
     public class BookStore: IBookStore
     {
         
-        int noOfBooks;
-        string bookTitle;
+        //int noOfBooks;
+        //string bookTitle;
         
         public double BookCost(Dictionary<string, int> bookOrder)
         {
@@ -31,19 +31,19 @@ namespace BookStoreServices
             }
             if (bookOrder.Count == 2)
             {
-                discount = 0.05;
+                discount = 0.05;// 5%
             }
             if (bookOrder.Count == 3)
             {
-                discount = 0.1;
+                discount = 0.1;//10%
             }
             if (bookOrder.Count == 4)
             {
-                discount = 0.2;
+                discount = 0.2;//20%
             }
             if (bookOrder.Count == 5)
             {
-                discount = 0.25;
+                discount = 0.25;// 25%
             }
 
 
@@ -54,6 +54,7 @@ namespace BookStoreServices
 
         }
 
+        /*
         public double BookCost(int noOfBooks, string[] titles)
         {
             //throw new NotImplementedException();
@@ -82,5 +83,6 @@ namespace BookStoreServices
             }
              return totalBookCost;
         }
+        */
     }
 }
