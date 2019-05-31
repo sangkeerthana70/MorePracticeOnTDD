@@ -53,30 +53,47 @@ namespace HarryPotterBooks
         [Test]
         public void CostOfOneBookReturnsDollar8()
         {
-            int numberOfBooks = 1;
-            string[] bookTitles = new string[] { };
+            Dictionary<string, int> bookOrder = new Dictionary<string, int>();
+            bookOrder["Sorcerer's stone"] = 1;
+
             double expected = 8;
             var BookStore = new BookStore();
-            var actual = BookStore.BookCost(numberOfBooks, bookTitles);
+            double actual = BookStore.BookCost(bookOrder);
+            Console.WriteLine("actual: " + actual);
             Assert.AreEqual(expected, actual);
-
+ 
                     
         }
-
+        
         [Test]
-        public void CostOfTwoBookWithDifferentTitleNames_ShouldDiscount_5Percent()
+        public void CostOfTwoBookWithDifferentTitleNames_ShouldDiscount_FivePercent()
         {
-            int numberOfBooks = 2;
-            string[] bookTitle = new string[2] {"Sorcerer's stone", "Chamber Of Secrets"};
 
-            double expected = 15;
+            Dictionary<string, int> bookOrder = new Dictionary<string, int>();
+            bookOrder["Sorcerer's stone"] = 1;
+            bookOrder["Chamber Of Secrets"] = 1;
+
+            double expected = 15.20;
             var BookStore = new BookStore();
-            
-            double actual = BookStore.BookCost(numberOfBooks, bookTitle);
+            double actual = BookStore.BookCost(bookOrder);
             Console.WriteLine("actual: " + actual);
             Assert.AreEqual(expected, actual);
         }
+        [Test]
+        public void CostOfTwoBookWithSameTitleNames_ShouldDiscount_zeroPercent()
+        {
 
+            Dictionary<string, int> bookOrder = new Dictionary<string, int>();
+            bookOrder["Sorcerer's stone"] = 2;
+
+            double expected = 16.00;
+            var BookStore = new BookStore();
+            double actual = BookStore.BookCost(bookOrder);
+            Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
+
+
+        }
 
     }
 }

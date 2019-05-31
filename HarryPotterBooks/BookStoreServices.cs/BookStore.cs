@@ -13,6 +13,46 @@ namespace BookStoreServices
         int noOfBooks;
         string bookTitle;
         
+        public double BookCost(Dictionary<string, int> bookOrder)
+        {
+            double cost = 0;
+            double discount = 0;
+            double costAfterDiscount = 0;
+
+            foreach (KeyValuePair<string,int> order in bookOrder)
+            {
+                cost += order.Value * 8;
+            }
+
+
+            if (bookOrder.Count == 1)
+            {
+                discount = 0;
+            }
+            if (bookOrder.Count == 2)
+            {
+                discount = 0.05;
+            }
+            if (bookOrder.Count == 3)
+            {
+                discount = 0.1;
+            }
+            if (bookOrder.Count == 4)
+            {
+                discount = 0.2;
+            }
+            if (bookOrder.Count == 5)
+            {
+                discount = 0.25;
+            }
+
+
+            costAfterDiscount = cost - (cost * discount);
+
+
+            return costAfterDiscount;
+
+        }
 
         public double BookCost(int noOfBooks, string[] titles)
         {
