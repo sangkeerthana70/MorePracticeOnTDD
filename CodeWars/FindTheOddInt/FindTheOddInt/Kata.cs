@@ -26,7 +26,9 @@ namespace FindTheOddInt
 
             foreach (KeyValuePair<int, int> numSeq in numberDict)
             {
-                if (numSeq.Value % 3 == 0)
+                Console.WriteLine("key: " + numSeq.Key);
+                Console.WriteLine("key's value: " + numSeq.Value);
+                if (numSeq.Value % 2 != 0)
                 {
                     result = numSeq.Key;
                     Console.WriteLine("result " + result);
