@@ -28,6 +28,20 @@ namespace FindTheOddInt
 
                 Assert.AreEqual(3, Kata.find_it(new[] { 20, 1, 3, -1, 2, -2, 3, 3, 5, 1, 2, 4, 3, 20, 4, -1, -2, 5, 3, 3, 3 }));
             }
+
+            [Test]
+            public void Tests2()
+            {
+
+                Assert.AreEqual(20 , Kata.find_it(new[] { 20, 1, -1, 2, -2, 3, 3, 5, 2, 4, 20, 4, -1, -2, 5, 20, 1 }));
+            }
+
+            [Test]
+            public void Tests3()
+            {
+
+                Assert.AreEqual(1, Kata.find_it(new[] { 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 1, 20 }));
+            }
         }
 
     }
