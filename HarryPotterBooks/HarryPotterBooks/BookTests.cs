@@ -79,6 +79,8 @@ namespace HarryPotterBooks
             //Console.WriteLine("actual: " + actual);
             Assert.AreEqual(expected, actual);
         }
+       
+
         [Test]
         public void CostOfTwoBooksWithSameTitleNames_ShouldDiscount_zeroPercent()
         {
@@ -87,6 +89,55 @@ namespace HarryPotterBooks
             bookOrder["Sorcerer's stone"] = 2;
 
             double expected = 16.00;
+            var BookStore = new BookStore();
+            double actual = BookStore.BookCost(bookOrder);
+            //Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
+
+
+        }
+
+        [Test]
+        public void CostOfThreeBooksWithThreeDifferentTitleNames_ShouldDiscount_TenPercent()
+        {
+            Dictionary<string, int> bookOrder = new Dictionary<string, int>();
+            bookOrder["Harry Potter and the Prisoner of Azkaban"] = 1;
+            bookOrder["Harry Potter and the Goblet of fire"] = 1;
+            bookOrder["Harry Potter and the Order of Phoenix"] = 1;
+
+            double expected = 21.6;
+            BookStore store = new BookStore();
+            double actual = store.BookCost(bookOrder);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void CostOfFourBooksWithFourDifferentTitleNames_ShouldDiscount_TwentyPercent()
+        {
+            Dictionary<string, int> bookOrder = new Dictionary<string, int>();
+            bookOrder["Harry Potter and the Prisoner of Azkaban"] = 1;
+            bookOrder["Harry Potter and the Goblet of fire"] = 1;
+            bookOrder["Harry Potter and the Order of Phoenix"] = 1;
+            bookOrder["Harry Potter and the Half-Blood Prince"] = 1;
+
+            double expected = 25.6;
+            BookStore store = new BookStore();
+            double actual = store.BookCost(bookOrder);
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void BasketOfBooksWithAllFiveTitlesAndDifferentOrderQuantities_ShouldReturProperDiscounts()
+        {
+
+            Dictionary<string, int> bookOrder = new Dictionary<string, int>();
+            bookOrder["Sorcerer's stone"] = 2;
+            bookOrder["Chamber of secrest"] = 2;
+            bookOrder["Prisoner  of Azkaban"] = 2;
+            bookOrder["Goblet of fire"] = 1;
+            bookOrder["Order of the Phoenix"] = 1;
+
+
+            double expected = 51.60;
             var BookStore = new BookStore();
             double actual = BookStore.BookCost(bookOrder);
             //Console.WriteLine("actual: " + actual);

@@ -15,42 +15,71 @@ namespace BookStoreServices
         
         public double BookCost(Dictionary<string, int> bookOrder)
         {
+
+            int setCount = bookOrder.Values.Max();
+            Console.WriteLine("setCount: " + setCount);
+
+            int[] sets = new int[setCount];
+            
+
+            int copies = 0;
+            foreach (KeyValuePair<string,int> order in bookOrder)
+            {
+                Console.WriteLine("Key value: " + order.Key + " " + order.Value);
+                copies = order.Value;
+                Console.WriteLine("no of copies of each book" + copies);
+                for (int i = 0; i < copies; i ++)
+                {
+                    Console.WriteLine("i is: " + i);
+                    sets[i] += 1;
+                    Console.WriteLine("sets[i] " + sets[i]);
+                    
+                }
+            }
+            //Console.WriteLine("Total Book count of all books " + String.Join(",", sets));
+
             double cost = 0;
             double discount = 0;
             double costAfterDiscount = 0;
-
-            foreach (KeyValuePair<string,int> order in bookOrder)
+            int count = 0;
+            for (int i = 0; i < setCount; i++)
             {
-                cost += order.Value * 8;
+                Console.WriteLine("i in setCount");
+                count = sets[i];
+                Console.WriteLine("count : " + count);
+                cost = count * 8;
+                discount = Discount(count);
+                costAfterDiscount += (cost - (cost * discount));
             }
-
-
-            if (bookOrder.Count == 1)
-            {
-                discount = 0;
-            }
-            if (bookOrder.Count == 2)
-            {
-                discount = 0.05;// 5%
-            }
-            if (bookOrder.Count == 3)
-            {
-                discount = 0.1;//10%
-            }
-            if (bookOrder.Count == 4)
-            {
-                discount = 0.2;//20%
-            }
-            if (bookOrder.Count == 5)
-            {
-                discount = 0.25;// 25%
-            }
-
-
-            costAfterDiscount = cost - (cost * discount);
-
 
             return costAfterDiscount;
+
+        }
+
+
+        private double Discount(int count)
+        {
+            if (count == 1)
+            {
+                return 0;
+            }
+            if (count == 2)
+            {
+                return 0.05;// 5%
+            }
+            if (count == 3)
+            {
+                return 0.1;//10%
+            }
+            if (count == 4)
+            {
+                return 0.2;//20%
+            }
+            if (count == 5)
+            {
+                return 0.25;// 25%
+            }
+            return 0;
 
         }
 
