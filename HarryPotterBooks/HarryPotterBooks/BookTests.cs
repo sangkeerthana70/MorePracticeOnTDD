@@ -125,6 +125,25 @@ namespace HarryPotterBooks
             double actual = store.BookCost(bookOrder);
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void CostOfFiveBooksWithFiveDifferentTitleNames_ShouldDiscount_TwentyFivePercent()
+        {
+            Dictionary<string, int> bookOrder = new Dictionary<string, int>();
+            bookOrder["Harry Potter and the Prisoner of Azkaban"] = 1;
+            bookOrder["Harry Potter and the Goblet of fire"] = 1;
+            bookOrder["Harry Potter and the Order of Phoenix"] = 1;
+            bookOrder["Harry Potter and the Half-Blood Prince"] = 1;
+            bookOrder["Harry Potter and the Deathly Hallows"] = 1;
+
+            double expected = 30;
+            BookStore store = new BookStore();
+            double actual = store.BookCost(bookOrder);
+            Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
+        }
+
+
         [Test]
         public void BasketOfBooksWithAllFiveTitlesAndDifferentOrderQuantities_ShouldReturProperDiscounts()
         {
