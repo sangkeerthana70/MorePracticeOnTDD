@@ -145,7 +145,7 @@ namespace HarryPotterBooks
 
 
         [Test]
-        public void BasketOfBooksWithAllFiveTitlesAndDifferentOrderQuantities_ShouldReturProperDiscounts()
+        public void BasketOfBooksWithAllFiveTitlesAndDifferentOrderQuantities_ShouldReturnProperDiscounts()
         {
 
             Dictionary<string, int> bookOrder = new Dictionary<string, int>();
