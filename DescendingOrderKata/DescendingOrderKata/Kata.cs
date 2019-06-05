@@ -18,28 +18,40 @@ namespace DescendingOrderKata
             
             for(int i = 0; i < strNum.Length; i++)
             {
-                Console.WriteLine("strNum type " + strNum[i].GetType());
-                
                 numList.Add(strNum[i]);
             }
             numList.Sort();
-            foreach(char i in numList)
-            {
-                Console.WriteLine("char i " + i);
-            }
+  
             numList.Reverse();
-            
-            Console.WriteLine("number: " + number);
-
+ 
             foreach (char r in numList)
             {
-                 Console.WriteLine("char r " + r.GetType()+ r);
                 number += r;
-                Console.WriteLine("result: " + number);
-                
             }
             return Convert.ToInt32(number);
             
+
+        }
+
+        public static UInt64 DescendingOrder(UInt64 num)
+        {
+            string strNum = num.ToString();
+            Console.WriteLine("strNum: " + strNum);
+            List<int> numList = new List<int>();
+            string number = "";
+
+            for (int i = 0; i < strNum.Length; i++)
+            {
+                numList.Add(strNum[i]);
+            }
+            numList.Sort();
+            numList.Reverse();
+
+            foreach (char r in numList)
+            {
+                number += r;
+            }
+            return Convert.ToUInt64(number);
 
         }
     }
