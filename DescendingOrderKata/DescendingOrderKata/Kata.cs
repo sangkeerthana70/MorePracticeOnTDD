@@ -12,9 +12,10 @@ namespace DescendingOrderKata
         {
             // Bust a move right here
             string strNum = num.ToString();
+            Console.WriteLine("strNum: " + strNum);
             List<int> numList = new List<int>();
-            int number;
-            int result = 0;
+            string number = "";
+            
             for(int i = 0; i < strNum.Length; i++)
             {
                 Console.WriteLine("strNum type " + strNum[i].GetType());
@@ -27,17 +28,18 @@ namespace DescendingOrderKata
                 Console.WriteLine("char i " + i);
             }
             numList.Reverse();
-            Int32.TryParse(numList.ToString(), out number);
+            
             Console.WriteLine("number: " + number);
 
             foreach (char r in numList)
             {
-                 Console.WriteLine("char r " + r.GetType());
-                result += r;
+                 Console.WriteLine("char r " + r.GetType()+ r);
+                number += r;
+                Console.WriteLine("result: " + number);
                 
             }
-            return result;
-
+            return Convert.ToInt32(number);
+            
 
         }
     }
