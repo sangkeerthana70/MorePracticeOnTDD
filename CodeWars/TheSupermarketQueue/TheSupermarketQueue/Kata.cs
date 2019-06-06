@@ -10,7 +10,22 @@ namespace TheSupermarketQueue
     {
         public static long QueueTime(int[] customers, int n)
         {
-            return 0;
+            long checkOutTime = 0;
+            if(customers.Length == 0)
+            {
+                return 0;
+            }
+
+            if(n == 1)
+            {
+                for(int i = 0; i < customers.Length; i++)
+                {
+                    checkOutTime += customers[i];
+                }
+                
+            }
+            Console.WriteLine(checkOutTime);
+            return checkOutTime;
         }
     }
 }
