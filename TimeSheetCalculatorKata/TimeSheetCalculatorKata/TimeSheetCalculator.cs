@@ -10,7 +10,7 @@ namespace TimeSheetCalculatorKata
     {
         public static float CalculateTime(float start, float breakTime, float end)
         {
-            if(start != null && end!= null)
+            if(start != 0 && end!= 0)
             {
                 if(end > start)
                 {
@@ -32,7 +32,7 @@ namespace TimeSheetCalculatorKata
                 }
             }
 
-            throw new ArgumentException("input was not in correct format");
+            throw new System.ArgumentException("input was not in correct format");
         }
     }
 }

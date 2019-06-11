@@ -11,6 +11,7 @@ namespace TimeSheetCalculatorKata
     public class UnitTests
     {
         [Test]
+        
         public void CheckIfInputHasAStartTimeAndAnEndTime()
         {
             float startTime = 08.00f;
@@ -22,7 +23,7 @@ namespace TimeSheetCalculatorKata
             var actual = TimeSheetCalculator.CalculateTime(startTime, breakTime, endTime);
             Assert.AreEqual(expected, actual);
         }
-
+        
         [Test]
         public void SwitchTheOrderOfInputShouldReturnCorrectResult()
         {
@@ -43,7 +44,7 @@ namespace TimeSheetCalculatorKata
             float endTime = 16.22f;
             float breakTime = 0f;
 
-            var expected = 9.20f;
+            var expected = 9.19999886f;
 
             var actual = TimeSheetCalculator.CalculateTime(startTime, breakTime ,endTime);
             Assert.AreEqual(expected, actual);
