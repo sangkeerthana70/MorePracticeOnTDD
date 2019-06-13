@@ -21,8 +21,8 @@ namespace BitCounting
         [Test]
         public void Inputof1Returns4Ones_InBinaryRepresentationOf1()
         {
-            int input = 1;
-            int expected = 4;
+            int input = 4;
+            int expected = 1;
             Assert.AreEqual(expected, BitCounting.countBits(input));
         }
     }

@@ -2,23 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace WordWrapKata
 {
    public  class WordWrap
-    {
+   {
         public static String wrap(String text, int limit)
         {
-            for(int index = 0; index < text.Length; index++)
+            if(text.Length <= limit)
             {
-                if (Char.IsPunctuation(text[index]))
-                {
-                    return "Invalid input string has punctuation";
-                }
+                return text;
             }
-            
-            return "no punctuations";
+            if(text.Length > limit)
+            {
+                //Regex.Replace(text, @" +", "\n");
+                text.Replace(" ", "\n");
+                
+                return text;
+            }
+
+            Console.WriteLine("The final string: '{0}'", text);
+            return text;
+
         }
-    }
+   }
 }

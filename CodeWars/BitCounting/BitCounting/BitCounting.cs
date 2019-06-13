@@ -19,31 +19,27 @@ namespace BitCounting
                 return 0;
             }
 
-            if(n >= 1)
+            
+            List<int> result = new List<int>();
+            int quotient = n;
+            int remainder = 0;
+                
+            while (quotient != 0)
             {
-                List<int> result = new List<int>();
-                int quotient = n;
-                int remainder = 0;
-                
-                while (quotient != 0)
-                {
-                    // Continue dividing the quotient by 2 until you get a quotient of zero
-                    remainder = quotient % 2;
-                    Console.WriteLine("remainder: " + remainder);
-                    quotient = quotient / 2;
-                    result.Add(remainder);
-                }
-                Console.WriteLine("result: " + String.Join(",", result));
-                int numOfOnes = 0;
-                string binary = string.Empty;
-                for (var i = 0; i < result.Count; i++)
-                {
-                    // reverses the elements in result array
-                    binary += result[result.Count - 1 - i];
-                    Console.WriteLine("binary: " + binary);
-                }
-                
-                
+                // Continue dividing the quotient by 2 until you get a quotient of zero
+                remainder = quotient % 2;
+                Console.WriteLine("remainder: " + remainder);
+                quotient = quotient / 2;
+                result.Add(remainder);
+            }
+            Console.WriteLine("result: " + String.Join(",", result));
+            int numOfOnes = 0;
+            string binary = string.Empty;
+            for (var i = 0; i < result.Count; i++)
+            {
+                // reverses the elements in result array
+                binary += result[result.Count - 1 - i];
+                Console.WriteLine("binary: " + binary);
             }
             return CheckConsecutiveOnes(binary);
 
