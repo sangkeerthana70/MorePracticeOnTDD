@@ -16,12 +16,16 @@ namespace WordWrapKata
         {
             string input = "Check for punctuation";
             int lineLimit = 7;
-
-
-
-            Assert.Throws());
         }
         */
+        [Test]
+        public void InputOfEmptyString_ReturnsAEmptyString()
+        {
+            string input = "";
+            int lineLimit = 0;
+            string expected = "";
+            Assert.AreEqual(expected, WordWrap.wrap(input, lineLimit));
+        }
 
         [Test]
         public void InputsLengthLessThanTheLineLimit_InsertsLineBreakAfterTheWord()
@@ -41,5 +45,17 @@ namespace WordWrapKata
 
             Assert.AreEqual(expected, WordWrap.wrap(input, lineLimit));
         }
+
+        [Test]
+        public void InputsLengthGreaterThanLineLimitButDoesNotBreakTheWOrdAtTheEnd()
+        {
+            string input = "a lot of words for a single line";
+            int lineLimit = 10;
+            string expected = "a lot of\nwords for\na single\nline";
+
+            Assert.AreEqual(expected, WordWrap.wrap(input, lineLimit));
+
+        }
+
     }
 }

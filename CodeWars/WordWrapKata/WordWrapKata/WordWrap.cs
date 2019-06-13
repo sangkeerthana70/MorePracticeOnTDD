@@ -11,16 +11,22 @@ namespace WordWrapKata
    {
         public static String wrap(String text, int limit)
         {
+            if(text == "")
+            {
+                return "";
+            }
+
             if(text.Length <= limit)
             {
                 return text;
             }
+
             if(text.Length > limit)
-            {
-                //Regex.Replace(text, @" +", "\n");
-                text.Replace(" ", "\n");
-                
-                return text;
+            {        
+                //text.Replace(" ", Environment.NewLine);
+ 
+                return System.Text.RegularExpressions.Regex.Replace(text, @"\s+", "\n");
+                //return System.Text.RegularExpressions.Regex.Replace(text, @"\s+", Environment.NewLine);
             }
 
             Console.WriteLine("The final string: '{0}'", text);
