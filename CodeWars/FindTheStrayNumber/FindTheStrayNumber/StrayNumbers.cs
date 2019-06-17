@@ -13,12 +13,12 @@ namespace FindTheStrayNumber
             
             int result = 0;
             IEnumerable<int> strayNumber = numbers.Distinct();
-            //foreach(int num in numbers)
+            //foreach (int num in numbers)
             //{
             //    result = num;
             //    Console.WriteLine("stray num " + num);
             //}
-            for(int i = 0; i < numbers.Length -1; i++)
+            for (int i = 0; i < numbers.Length -1; i++)
             {
                 if(numbers[i] != numbers[i + 1])
                 {
