@@ -27,29 +27,35 @@ namespace FindTheStrayNumber
     {
         [Test]
         public void CheckIfAInputReturnsTheExpectedOutput()
-        {
-
-            int expected = 0;
-            Assert.AreEqual(0, StrayNumbers.Stray(new int[] { 0, 0, 0 }));
+        {           
+            Assert.AreEqual(0, StrayNumbers.Stray(new int[] { }));
         }
-        
+
         [Test]
-        public void AnArrayOfLength3Returns2AsOutput()
+        public void SimpleInputArrayReturnsExpectedOutput()
         {
             Assert.AreEqual(2, StrayNumbers.Stray(new int[] { 1, 1, 2 }));
         }
 
         [Test]
-        public void AnArrayOfOddNumberOFInputsReturns3AsOutput()
+        public void ReturnsFirstElementAsStrayNumber()
+        {
+            Assert.AreEqual(9, StrayNumbers.Stray(new int[] { 9, 99, 99, 99, 99 }));
+        }
+
+        [Test]
+        public void ReturnsLastElementAsStrayNumber()
+        {
+            Assert.AreEqual(2, StrayNumbers.Stray(new int[] { 10, 10, 10, 10, 2 }));
+        }
+
+        [Test]
+        public void ReturnsMiddleElementAsStrayNumber()
         {
             Assert.AreEqual(3, StrayNumbers.Stray(new int[] { 17, 17, 3, 17, 17, 17, 17 }));
         }
 
-        [Test]
-        public void AnArrayOfOddNumberOfInputsReturns9AsOutput()
-        {
-            Assert.AreEqual(9, StrayNumbers.Stray(new int[] { 99, 99, 9, 99, 99 }));
-        }
+        
 
     }
 }

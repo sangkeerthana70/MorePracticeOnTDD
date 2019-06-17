@@ -20,12 +20,19 @@ namespace FindTheStrayNumber
             //}
             for (int i = 0; i < numbers.Length -1; i++)
             {
-                if(numbers[i] != numbers[i + 1])
+                if(numbers[0] != numbers[1])
                 {
-                    Console.WriteLine("unique: " + numbers[i+1]);
-                    result = numbers[i + 1];
+                    result = numbers[0];
                     break;
                 }
+
+                if(numbers[i] != numbers[i + 1])
+                {
+                    //Console.WriteLine("unique: " + numbers[i+1]);
+                    result = numbers[i+1];
+                    break;
+                }
+                result = numbers[i];
             }
             return result;
             
