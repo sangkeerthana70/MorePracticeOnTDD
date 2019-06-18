@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteSpaceTrim", "WhiteSpaceTrim\WhiteSpaceTrim.csproj", "{AC00E4D9-D360-402E-A34F-1636C484EA52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{2EB81470-62FC-44D0-9BDD-AFEC7390505E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC00E4D9-D360-402E-A34F-1636C484EA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC00E4D9-D360-402E-A34F-1636C484EA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC00E4D9-D360-402E-A34F-1636C484EA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC00E4D9-D360-402E-A34F-1636C484EA52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EB81470-62FC-44D0-9BDD-AFEC7390505E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB81470-62FC-44D0-9BDD-AFEC7390505E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB81470-62FC-44D0-9BDD-AFEC7390505E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB81470-62FC-44D0-9BDD-AFEC7390505E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7628A267-E119-4BB9-B12F-FF7516954144}
+	EndGlobalSection
+EndGlobal
