@@ -52,7 +52,7 @@ namespace FindTheStrayNumber
         [Test]
         public void ReturnsMiddleElementAsStrayNumber()
         {
-            Assert.AreEqual(3, StrayNumbers.Stray(new int[] { 17, 17, 3, 17, 17, 17, 17 }));
+            Assert.AreEqual(3, StrayNumbers.Stray(new int[] { 17, 17, 17, 3, 17, 17, 17}));
         }
 
         

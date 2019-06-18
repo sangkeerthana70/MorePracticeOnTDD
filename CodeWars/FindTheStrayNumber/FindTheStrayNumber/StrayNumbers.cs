@@ -10,14 +10,23 @@ namespace FindTheStrayNumber
     {
         public static int Stray(int[] numbers)
         {
-            
+            if(numbers == null || numbers.Length == 0)
+            {
+                return 0;
+            }
+
+            Array.Sort(numbers);
+ 
+            return numbers[0] == numbers[1] ? numbers.Last() : numbers.First();
+            /*
             int result = 0;
             IEnumerable<int> strayNumber = numbers.Distinct();
-            //foreach (int num in numbers)
-            //{
-            //    result = num;
-            //    Console.WriteLine("stray num " + num);
-            //}
+            foreach (int num in numbers)
+            {
+                result = num;
+                Console.WriteLine("stray num " + num);
+            }
+
             for (int i = 0; i < numbers.Length -1; i++)
             {
                 if(numbers[0] != numbers[1])
@@ -35,7 +44,7 @@ namespace FindTheStrayNumber
                 result = numbers[i];
             }
             return result;
-            
+            */
 
         }
     }
