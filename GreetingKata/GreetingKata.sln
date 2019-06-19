@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingKata", "GreetingKata\GreetingKata.csproj", "{65D7836A-0F3B-430C-BDCD-B5DC0A0C11B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingServices", "GreetingServices\GreetingServices.csproj", "{2315034C-1015-4095-9961-154504FF4055}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65D7836A-0F3B-430C-BDCD-B5DC0A0C11B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65D7836A-0F3B-430C-BDCD-B5DC0A0C11B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65D7836A-0F3B-430C-BDCD-B5DC0A0C11B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65D7836A-0F3B-430C-BDCD-B5DC0A0C11B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2315034C-1015-4095-9961-154504FF4055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2315034C-1015-4095-9961-154504FF4055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2315034C-1015-4095-9961-154504FF4055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2315034C-1015-4095-9961-154504FF4055}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DC0DCE5-D9DB-41C3-B6AB-23CAEB8A09A0}
+	EndGlobalSection
+EndGlobal
