@@ -19,11 +19,37 @@ namespace GreetingKata
         }
 
         [Test]
-        public void GreetNameShouldHandleNullIfNameIsNull()
+        public void GreetNameShouldHandleNullsIfInputIsNull()
         {
-            string name = "";
+            string name = null;
             string expected = "Hello, my friend.";
             string actual = greeting.GreetName(name);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void GreetNameShouldHandle_EmptyStringInput()
+        {
+            string name = "";
+
+            Assert.Throws<System.ArgumentException>(() => greeting.GreetName(name));
+        }
+
+        [Test]
+        public void GreetNameShouldHandle_UpperCaseStringInput()
+        {
+            string name = "JERRY";
+            string expected = "HELLO JERRY!";
+            string actual = greeting.GreetName(name);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void GreetNameShouldHandle_TwoNamesAsInput()
+        {
+            string[] names = new string[] { "Jill", "Jane"};
+            string expected = "Hello, Jill and Jane!";
+            string actual = greeting.GreetName(names);
             Assert.AreEqual(expected, actual);
         }
     }
