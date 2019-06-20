@@ -12,30 +12,39 @@ namespace Services
         public static string CheckForWhiteSpace(string input)
         {
             
-            char[] charsToRemove = { ' ', '\t' };
             if (input == null)
                 throw new NullReferenceException();
 
             if (input == string.Empty)
                 throw new ArgumentException();
 
-            string[] words = input.Split(' ');
-            foreach(string word in words)
+            char[] phraseAsChars = input.ToCharArray();
+            int spaceIndex = input.IndexOf("   ");
+            Console.WriteLine("space index: " + spaceIndex);
+            if (spaceIndex != -1)
             {
-                if (!string.IsNullOrWhiteSpace(word))
-                {
-                    word.TrimEnd(charsToRemove);
-                }
-                
+                phraseAsChars[spaceIndex++] = ' ';
+                phraseAsChars[spaceIndex++] = ' ';
+                phraseAsChars[spaceIndex] = ' ';
             }
-            
 
-            //return  input.Replace(" ", "");
+            string updatedPhrase = new string(phraseAsChars);
+            Console.WriteLine(updatedPhrase);
+            for(int i = 0; i < updatedPhrase.Length; i++)
+            {
 
+                if (!char.IsWhiteSpace(updatedPhrase[i]))
+                {
+                    //get the last index of non white space character's index
+                    int index = updatedPhrase.LastIndexOf(updatedPhrase[i]);
+                    Console.WriteLine("index: " + index);
+                    updatedPhrase.Substring(index + 1);
+                    Console.WriteLine("substring: " + updatedPhrase);
+                }
+            }
+ 
+            return updatedPhrase.TrimEnd();
 
-            return string.Join("",words);//input.TrimEnd(charsToRemove);
-            
-            
         }
     }
 }
