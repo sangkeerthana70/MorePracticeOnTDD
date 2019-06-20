@@ -18,6 +18,24 @@ namespace Services
             if (input == string.Empty)
                 throw new ArgumentException();
 
+            bool firstLetterFound = false;
+            StringBuilder sb = new StringBuilder(input);
+
+            for (int i = 0; i < sb.Length; i++)
+            {
+                if (firstLetterFound == false && (!char.IsWhiteSpace(sb[i])))
+                {
+                    firstLetterFound = true;
+                }
+                if (firstLetterFound == true && sb[i] == ' ' || sb[i] == '\t')
+                {
+                    sb[i] = 'x';
+                }
+            }
+
+            return sb.Replace("x", "").ToString();
+
+            /*
             char[] phraseAsChars = input.ToCharArray();
             int spaceIndex = input.IndexOf("   ");
             Console.WriteLine("space index: " + spaceIndex);
@@ -29,21 +47,29 @@ namespace Services
             }
 
             string updatedPhrase = new string(phraseAsChars);
-            Console.WriteLine(updatedPhrase);
+            Console.WriteLine("updatedPhrase: " + updatedPhrase);
             for(int i = 0; i < updatedPhrase.Length; i++)
             {
+                if(updatedPhrase[i] == ' ')
+                {                  
+                    //updatedPhrase.Replace(" ", "");
+                    
+                }
 
                 if (!char.IsWhiteSpace(updatedPhrase[i]))
                 {
+                
                     //get the last index of non white space character's index
                     int index = updatedPhrase.LastIndexOf(updatedPhrase[i]);
                     Console.WriteLine("index: " + index);
                     updatedPhrase.Substring(index + 1);
                     Console.WriteLine("substring: " + updatedPhrase);
                 }
+                
             }
  
             return updatedPhrase.TrimEnd();
+            */
 
         }
     }

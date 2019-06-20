@@ -52,8 +52,8 @@ namespace WhiteSpaceTrim
         
         public void KeepsWhitespaceAtBeginningOfString()
         {
-            string input = "   abc    ";
-            string expected = "   abc";
+            string input = "      abc    ";
+            string expected = "      abc";
             var actual = TrimSpaces.CheckForWhiteSpace(input);
             Assert.AreEqual(expected, actual);
         }
@@ -68,14 +68,22 @@ namespace WhiteSpaceTrim
         }
 
         [Test]
-        public void RemoveWhiteSpaceInMiddleOfString()
+        public void RemoveWhiteSpaceAtTheEndOfSecondLine()
         {
-            string input = "abc\r\n cd \r\n ";
+            string input = "abc\r\n cd \r\n";
             string expected = "abc\r\ncd\r\n";
             var actual = TrimSpaces.CheckForWhiteSpace(input);
             Assert.AreEqual(expected, actual);
         }
 
+        [Test]
+        public void InputOfNewLineInAString_ReturnsANewLine()
+        {
+            string input = "\r\n";
+            string expected = "\r\n";
+            var actual = TrimSpaces.CheckForWhiteSpace(input);
+            Assert.AreEqual(expected, actual);
+        }
 
     }
 }
