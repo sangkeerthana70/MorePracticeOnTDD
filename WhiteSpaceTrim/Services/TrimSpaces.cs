@@ -27,7 +27,7 @@ namespace Services
                 {
                     firstLetterFound = true;
                 }
-                if (firstLetterFound == true && sb[i] == ' ' || sb[i] == '\t')
+                if (firstLetterFound && sb[i] == ' ' || sb[i] == '\t')
                 {
                     sb[i] = 'x';
                 }

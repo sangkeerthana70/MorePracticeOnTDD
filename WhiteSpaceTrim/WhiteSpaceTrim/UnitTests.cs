@@ -50,7 +50,7 @@ namespace WhiteSpaceTrim
 
         [Test]
         
-        public void KeepsWhitespaceAtBeginningOfString()
+        public void KeepsWhitespaceAtBeginningOfString()// this test should retain white space at the beginning of a string
         {
             string input = "      abc    ";
             string expected = "      abc";
@@ -59,7 +59,7 @@ namespace WhiteSpaceTrim
         }
 
         [Test]
-        public void CheckForTabsAndRemoveThemFromString()
+        public void CheckForTabsAndRemoveThemFromString()// check for tabs and remove
         {
             string input = "abc\t ";
             string expected = "abc";
@@ -68,7 +68,7 @@ namespace WhiteSpaceTrim
         }
 
         [Test]
-        public void RemoveWhiteSpaceAtTheEndOfSecondLine()
+        public void RemoveWhiteSpaceAtTheEndOfSecondLine()// remove white space at the end of string
         {
             string input = "abc\r\n cd \r\n";
             string expected = "abc\r\ncd\r\n";
@@ -77,7 +77,7 @@ namespace WhiteSpaceTrim
         }
 
         [Test]
-        public void InputOfNewLineInAString_ReturnsANewLine()
+        public void InputOfNewLineInAString_ReturnsANewLine()// input returns a new line char
         {
             string input = "\r\n";
             string expected = "\r\n";
