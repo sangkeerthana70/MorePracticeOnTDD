@@ -24,7 +24,7 @@ namespace ConvertStringToCamelCase
 
         [Test]
 
-        public void InputOfUnderscoreDelimitedWords_ShouldRemoveDashesAndConvertToCamelCase()
+        public void InputOfUnderscoreDelimitedWords_ShouldRemoveUnderScoresAndConvertToCamelCase()
         {
             string input = "the_rain_maker";
             string expected = "theRainMaker";

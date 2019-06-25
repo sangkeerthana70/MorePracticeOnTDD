@@ -21,14 +21,11 @@ namespace ConvertStringToCamelCase
             //string solution1 = Regex.Replace(str, "[-.()&_]+", "");
             */
 
-            
+           
             char[] delimiter = { '-', '_' };
-
             string[] words = str.Split(delimiter);
-
-
-
-
+            
+            //Converts the specified string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
             TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
             string output = words[0];
             for (int i = 0; i < words.Length - 1; i++)
@@ -38,6 +35,10 @@ namespace ConvertStringToCamelCase
             }
             Console.WriteLine("output: " + output);
             return output;
+            
+
+            
+           
         }
 
 
