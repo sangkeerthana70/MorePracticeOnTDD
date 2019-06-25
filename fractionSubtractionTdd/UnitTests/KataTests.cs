@@ -8,7 +8,7 @@ namespace UnitTests
     public class KataTests
     {
         [Test]
-        public void CheckIfBothDenominatorsAreTheSame_ReturnSubtractedResult()
+        public void CheckIfBothDenominatorsAreTheSame_ReturnSubtractedFraction()
         {
             int[] firstFraction = { 3, 4 };
             int[] secondFraction = { 2, 4 };
@@ -51,8 +51,8 @@ namespace UnitTests
         [Test]
         public void CheckIfBothDenominatorsAredifferent_ReturnsSubtractedReducedFraction()
         {
-            int[] firstFraction = { 2, 4 };  // 18 / 36
-            int[] secondFraction = { 5, 9 }; // 20 / 36  == -2 / 36 == -1 / 18
+            int[] firstFraction = { 2, 4 };  //  {2*9/4*9}  = 18 / 36 
+            int[] secondFraction = { 5, 9 }; //{ 5*4/9*4} = 20 / 36  == (18-20)/ 36 = -2 / 36 == -1 / 18
             int[] result = { -1, 18 };
 
             var expected = result;
