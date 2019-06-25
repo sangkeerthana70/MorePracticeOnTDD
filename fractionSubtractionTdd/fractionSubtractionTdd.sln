@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionSubtractionTddServices", "fractionSubtractionTdd\FractionSubtractionTddServices.csproj", "{F5FAB030-B540-4EBF-AE1E-0EC07B9C8AC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{6DB771B7-F00B-4698-AE0F-080241EF4452}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5FAB030-B540-4EBF-AE1E-0EC07B9C8AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5FAB030-B540-4EBF-AE1E-0EC07B9C8AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5FAB030-B540-4EBF-AE1E-0EC07B9C8AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5FAB030-B540-4EBF-AE1E-0EC07B9C8AC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB771B7-F00B-4698-AE0F-080241EF4452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB771B7-F00B-4698-AE0F-080241EF4452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB771B7-F00B-4698-AE0F-080241EF4452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB771B7-F00B-4698-AE0F-080241EF4452}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {594ABC9B-3F04-459E-A352-26D9115826AB}
+	EndGlobalSection
+EndGlobal
