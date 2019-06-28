@@ -23,7 +23,7 @@ namespace RomanNumerals
            for(int i = 0; i < romanNumeral.Length; i++)
            {
                 currVal = RomanToNumbers(romanNumeral[i]);
-                Console.WriteLine("currVal : " + currVal);
+                
                if(i == romanNumeral.Length - 1)
                {
                     result += currVal;
@@ -31,23 +31,19 @@ namespace RomanNumerals
                 else
                 {
                     nextVal = RomanToNumbers(romanNumeral[i + 1]);
-                    Console.WriteLine("nextVal " + nextVal);
+                   
                     if(currVal < nextVal)
-                    {
-                        Console.WriteLine("currVal < nextVal");
+                    {                     
                         result += nextVal - currVal;
-                        Console.WriteLine("result " + result);
                         i++;
                     }
                     else
                     {
-                        Console.WriteLine("currVal > nextVal");
                         result += currVal;
                     }
                 }
            }          
-           return result;
-            
+           return result;            
         }
 
         private int RomanToNumbers(char rNumeral)
