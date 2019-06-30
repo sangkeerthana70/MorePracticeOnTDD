@@ -8,7 +8,7 @@ namespace TheSupermarketQueue
     public class UnitTests
     {
         [Test]
-        public void ExampleTest1()
+        public void IfCustomersArrayIsEmpty_ReturnZero()
         {
             long expected = 0;
 
@@ -18,7 +18,7 @@ namespace TheSupermarketQueue
         }
         
         [Test]
-        public void ExampleTest2()
+        public void IfTillIsOne_ReturnTotalCheckOutTimeOfCustomersInArray()
         {
             long expected = 10;
 
@@ -26,17 +26,17 @@ namespace TheSupermarketQueue
 
             Assert.AreEqual(expected, actual);
         }
-        /*
+        
         [Test]
-        public void ExampleTest3()
+        public void IfTillIsTwo_ReturnMaximumTimeTakenByTheCustomersWithLongerCheckOutTime()
         {
             long expected = 9;
 
-            long actual = Kata.QueueTime(new int[] { 2, 2, 3, 3, 4, 4 }, 2);
+            long actual = Kata.QueueTime(new int[] { 3, 2, 2, 3, 4, 4 }, 2);
 
             Assert.AreEqual(expected, actual);
         }
-
+        /*
         [Test]
         public void ExampleTest4()
         {
