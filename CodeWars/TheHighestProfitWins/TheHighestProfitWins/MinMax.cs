@@ -10,15 +10,16 @@ namespace TheHighestProfitWins
     {
         public static int[] minMax(int[] lst)
         {
-            List<int> minAndMaxNum = new List<int>();
+            //List<int> minAndMaxNum = new List<int>();
 
-            minAndMaxNum.Add(lst.Min());
+            //minAndMaxNum.Add(lst.Min());
 
-            minAndMaxNum.Add(lst.Max());
+            //minAndMaxNum.Add(lst.Max());
 
             //foreach (int num in minAndMaxNum)
             //    Console.WriteLine("num: " + num);
-            return minAndMaxNum.ToArray();
+            // return minAndMaxNum.ToArray();
+            return new int[] { lst.Min(), lst.Max() };
 
         }
     }
