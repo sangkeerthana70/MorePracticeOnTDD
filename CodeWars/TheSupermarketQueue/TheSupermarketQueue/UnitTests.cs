@@ -36,21 +36,21 @@ namespace TheSupermarketQueue
             long expected = 9;
 
             long actual = Kata.QueueTime(new int[] { 2, 2, 3, 3, 4, 4 }, 2);
-
+            Console.WriteLine("actual " + actual);
             Assert.AreEqual(expected, actual);
         }
-        /*
+        
         [Test]
 
-        public void ExampleTest4()
+        public void IfTillsIsGreaterThanTwo_ReturnTheMaxCheckOutTime()
         {
             long expected = 5;
 
             long actual = Kata.QueueTime(new int[] { 1, 2, 3, 4, 5 }, 100);
-
+            Console.WriteLine("actual " + actual);
             Assert.AreEqual(expected, actual);
         }
-        */
+        
     }
 }
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +15,7 @@ namespace TheSupermarketQueue
             {
                 tills[i] = 0;
             }
-           
+            long checkOutTime = 0;
             if (customers.Length == 0)
             {
                 return 0;
@@ -33,20 +33,22 @@ namespace TheSupermarketQueue
             Console.WriteLine(checkOutTime);
             return checkOutTime;
             */
-            
+            int maxCheckOutTime = 0;
             int maxVal = Int32.MinValue;
             for (int i = 0; i < customers.Length; i++)
-            {               
+            {
+                Console.WriteLine("customers[i] " + i);
                 int minVal = GetMinimumTillValue(tills);
-    
-                // get the minimum index value in till array to assign the next customer to the till array
+                Console.WriteLine("element in tills: " + String.Join(",", tills));
+                Console.WriteLine("minVal " + minVal);
+                Console.WriteLine("adding to till " + minVal);
+
                 tills[minVal] += customers[i];
-                //Console.WriteLine("till total " + tills[minVal]);
+                Console.WriteLine("till total " + tills[minVal]);
             }
 
             for (int i = 0; i < tills.Length; i++)
             {
-                // return max checkout time of the customers
                 if (tills[i] > maxVal)
                 {
                     maxVal = tills[i];
