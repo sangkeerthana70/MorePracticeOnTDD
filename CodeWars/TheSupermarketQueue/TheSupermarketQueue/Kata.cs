@@ -11,8 +11,12 @@ namespace TheSupermarketQueue
         public static long QueueTime(int[] customers, int n)
         {
             int[] tills = new int[n];
+            for (int i = 0; i < tills.Length; i++)
+            {
+                tills[i] = 0;
+            }
             long checkOutTime = 0;
-            if(customers.Length == 0)
+            if (customers.Length == 0)
             {
                 return 0;
             }
@@ -30,44 +34,52 @@ namespace TheSupermarketQueue
             return checkOutTime;
             */
             int maxCheckOutTime = 0;
-            for(int i = 0; i < customers.Length -1; i++)
+            int maxVal = Int32.MinValue;
+            for (int i = 0; i < customers.Length; i++)
             {
-                if(i < n)
-                {
-                    tills[i] = customers[i];
-                    maxCheckOutTime += customers[i];
-                    Console.WriteLine("maxTime " + maxCheckOutTime);
-                }
-                if(i > n)
-                {
-                    int minVal = GetMinimumTillValue(tills);
-                    Console.WriteLine("element in tills: " + String.Join(",", tills));
-                    Console.WriteLine("minVal " + minVal);
-                    tills[minVal] = customers[i];
-                    maxCheckOutTime += customers[i];
-                    Console.WriteLine("maxTime " + maxCheckOutTime);
-                }
+                Console.WriteLine("customers[i] " + i);
+                int minVal = GetMinimumTillValue(tills);
+                Console.WriteLine("element in tills: " + String.Join(",", tills));
+                Console.WriteLine("minVal " + minVal);
+                Console.WriteLine("adding to till " + minVal);
+
+                tills[minVal] += customers[i];
+                Console.WriteLine("till total " + tills[minVal]);
             }
-            return maxCheckOutTime;
+
+            for (int i = 0; i < tills.Length; i++)
+            {
+                if (tills[i] > maxVal)
+                {
+                    maxVal = tills[i];
+                }
+
+            }
+            return maxVal;
+
+
         }
 
         public static int GetMinimumTillValue(int[] till)
         {
             int indexValue = 0;
             int minVal = Int32.MaxValue;
-            int minIndexValue = Int32.MaxValue;
+            
 
             for(int i = 0; i < till.Length; i++)
             {
                 if(till[i] < minVal)
                 {
                     minVal = till[i];
-                    Console.WriteLine("minval of till array " + minVal);
+                    
+                   // get the minimum index of the till array that has the lowest wait time
                     indexValue = i;
                     
-                    Console.WriteLine("indexValue " + indexValue);
+                    
                 }
             }
+            Console.WriteLine("minval of till array " + minVal);
+            Console.WriteLine("indexValue " + indexValue);
             return indexValue;
         }
     }
