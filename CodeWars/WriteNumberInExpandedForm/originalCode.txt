@@ -1,0 +1,32 @@
+           string numToStr = num.ToString();
+
+            /*
+            if (numToStr.Length == 1)
+                return numToStr;
+            if (numToStr.Length == 2)
+                return numToStr[0] + "0 + " + numToStr[1];
+            if (numToStr.Length == 3)
+                return numToStr[0] + "00 + " + numToStr[1] + "0 + " + numToStr[2];
+            */
+            //return numToStr;
+
+            StringBuilder expandedForm = new StringBuilder();
+            int strLength = numToStr.Length -1;
+
+            for(int index = 0; index <= strLength; index++)
+            {
+                if (numToStr[index] == '0')
+                    continue;
+                   
+                // if last element in string
+                if (index == strLength)
+                {
+                    expandedForm.Append(numToStr[index]);
+                }
+                else
+                {
+                    expandedForm.Append(numToStr[index]).Append('0', strLength - index).Append(" + ");
+                }
+            }
+            // remove the " + " space, plus and space at the end of string added at the ones place of the number
+            return expandedForm.ToString().TrimEnd(' ').Trim('+').TrimEnd(' ');

@@ -10,47 +10,31 @@ namespace WriteNumberInExpandedForm
     {
         public static string ExpandedForm(long num)
         {
-            string numToStr = num.ToString();
-            
-            /*
-            if (numToStr.Length == 1)
-                return numToStr;
-            if (numToStr.Length == 2)
-                return numToStr[0] + "0 + " + numToStr[1];
-            if (numToStr.Length == 3)
-                return numToStr[0] + "00 + " + numToStr[1] + "0 + " + numToStr[2];
-            */
+            string numberStr = num.ToString();
+
 
             StringBuilder expandedForm = new StringBuilder();
-            int strLength = numToStr.Length -1;
+            int strLength = numberStr.Length -1;
 
-            //if(numToStr.Length > 3)
-            //{
-                for(int index = 0; index <= strLength; index++)
-                {
-                    if (numToStr[index] == '0')
-                        continue;
+            for(int index = 0; index <= strLength; index++)
+            {
+                // if number has zeros in any place continue to next loop
+                if (numberStr[index] == '0')
+                    continue;
                    
-
-                    if (index == strLength)
-                    {
-                        expandedForm.Append(numToStr[index]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("index " + index);
-                        expandedForm.Append(numToStr[index]).Append('0', strLength - index).Append(" + ");
-                        Console.WriteLine("{0}", expandedForm);
-                    }
-                    
-                    
-                    
+                // if last element in string
+                if (index == strLength)
+                {
+                    expandedForm.Append(numberStr[index]);
                 }
+                else
+                {
+                    expandedForm.Append(numberStr[index]).Append('0', strLength - index).Append(" + ");
+                }
+            }
+            // remove the " + " space, plus and space at the end of string added at the ones place of the number
             return expandedForm.ToString().TrimEnd(' ').Trim('+').TrimEnd(' ');
-            //}
-
-
-            //return numToStr;
+           
         }
     }
 }

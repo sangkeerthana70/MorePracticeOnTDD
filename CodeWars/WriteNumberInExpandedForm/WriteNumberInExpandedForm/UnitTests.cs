@@ -34,8 +34,9 @@ namespace WriteNumberInExpandedForm
         {
             Assert.That(Kata.ExpandedForm(3479), Is.EqualTo("3000 + 400 + 70 + 9"));
         }
+
         [Test]
-        public void IfLengthIsMoreThanThreeAndNoZeros_ReturnHundredsTensAndOnes()
+        public void IfLengthIsMoreThanThreeAndNoZerosInTheNumber_ReturnsHundredsTensAndOnes()
         {
             //long number = 54213;
             string expected = "50000 + 4000 + 200 + 10 + 3";
