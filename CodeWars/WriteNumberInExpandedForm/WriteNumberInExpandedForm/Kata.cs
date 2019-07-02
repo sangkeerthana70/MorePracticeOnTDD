@@ -29,6 +29,7 @@ namespace WriteNumberInExpandedForm
                 }
                 else
                 {
+                    // add the element from numberStr followed by number of zeros equal to the place value followed by " + "
                     expandedForm.Append(numberStr[index]).Append('0', strLength - index).Append(" + ");
                 }
             }
