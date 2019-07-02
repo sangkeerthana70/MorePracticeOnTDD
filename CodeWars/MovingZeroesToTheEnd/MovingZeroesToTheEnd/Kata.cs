@@ -37,8 +37,14 @@ namespace MovingZeroesToTheEnd
                 Console.WriteLine("nonZero " + nonZero);
             }
 
-            List<int> numberOfZeros = new List<int>(zerosCount);
-            tempList.AddRange(numberOfZeros);
+            int[] zeros = new int[zerosCount];
+            for(int index = 0; index< zeros.Length; index++)
+            {
+                zeros[index] = 0;
+            }
+           
+            
+            tempList.AddRange(zeros);
             Console.WriteLine("after moving zeros");
             foreach(int num in tempList)
             {
