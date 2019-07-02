@@ -30,26 +30,17 @@ namespace MovingZeroesToTheEnd
                     zerosCount += 1;
                 }
             }
-            Console.WriteLine("list count " + tempList.Count());
-            Console.WriteLine("before adding zeros");
-            foreach(int nonZero in tempList)
-            {
-                Console.WriteLine("nonZero " + nonZero);
-            }
-
+    
+            //create an array the size of zerosCount above and populate it with as many zeros
             int[] zeros = new int[zerosCount];
             for(int index = 0; index< zeros.Length; index++)
             {
                 zeros[index] = 0;
             }
            
-            
+            // add the range of zeros from the zeros array to the list
             tempList.AddRange(zeros);
-            Console.WriteLine("after moving zeros");
-            foreach(int num in tempList)
-            {
-                Console.WriteLine("num " + num);
-            }
+          
             return tempList.ToArray();
         }
     }
