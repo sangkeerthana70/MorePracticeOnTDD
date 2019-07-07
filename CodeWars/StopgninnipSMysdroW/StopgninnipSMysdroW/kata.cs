@@ -20,16 +20,25 @@ namespace StopgninnipSMysdroW
                 throw new System.NullReferenceException();
             }
 
-            if(sentence.Length >= 5)
+            string[] words = sentence.Split(' ');
+            Console.WriteLine("words " + string.Join(" ", words));
+
+            string reversed = "";
+            for(int i = 0; i < words.Length; i++)
             {
-                char[] charArray = sentence.ToCharArray();
-                Console.WriteLine("charArray "+ String.Join(",", charArray));
-                Array.Reverse(charArray);
-
-                return new string(charArray);
+                if(words[i].Length >= 5)
+                {
+                    char[] charArray = words[i].ToCharArray();
+                    Array.Reverse(charArray);
+                    reversed += new string(charArray) + " ";
+                }
+                else
+                {
+                    reversed += words[i] + " ";
+                }
             }
-
-            return sentence;
+            //return String.Join(" ", reversed);
+            return reversed.TrimEnd();
         }
     }
 }
