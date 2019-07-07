@@ -38,7 +38,7 @@ namespace MovingZeroesToTheEnd
                 zeros[index] = 0;
             }
            
-            // add the range of zeros from the zeros array to the list
+            // add the range of zeros from the zeros array to end of the list
             tempList.AddRange(zeros);
           
             return tempList.ToArray();

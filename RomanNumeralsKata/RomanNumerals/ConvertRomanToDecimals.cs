@@ -20,29 +20,34 @@ namespace RomanNumerals
                 throw new ArgumentException();
 
 
-           for(int i = 0; i < romanNumeral.Length; i++)
-           {
+            for (int i = 0; i < romanNumeral.Length; i++)
+            {
                 currVal = RomanToNumbers(romanNumeral[i]);
-                
-               if(i == romanNumeral.Length - 1)
-               {
+                result = currVal;
+                Console.WriteLine("result " + result);
+                if(i == romanNumeral.Length - 1)
+                {
                     result += currVal;
-               }
+                }
                 else
                 {
                     nextVal = RomanToNumbers(romanNumeral[i + 1]);
-                   
-                    if(currVal < nextVal)
-                    {                     
-                        result += nextVal - currVal;
+                    Console.WriteLine("nextVal: " + nextVal);
+                    if (currVal > nextVal)
+                    {                        
+                        result += nextVal;
+                        Console.WriteLine("result in currVal > nextVal: " + result);
                         i++;
                     }
                     else
                     {
-                        result += currVal;
+                        result = currVal - nextVal;
+                        Console.WriteLine("result in currVal < nextVal: " + result);
                     }
                 }
-           }          
+                
+                
+            }
            return result;            
         }
 
