@@ -27,9 +27,7 @@ namespace firstSundayOfEachMonth
 
             DateTime date = firstMonday.Date;
             Console.WriteLine("firstMonday.Date " + date);
-            int firstMondayMonth = firstMonday.Month;
-            Console.WriteLine("firstMondayMonth " + firstMondayMonth);
-            int currentYear = firstMonday.Year;
+            
 
             DateTime currentMonday = firstMonday;
             firstMondays.Add(currentMonday);
