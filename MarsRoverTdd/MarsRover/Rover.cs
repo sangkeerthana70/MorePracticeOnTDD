@@ -93,12 +93,13 @@ namespace MarsRover
         }
         */
 
-        public void ChangeDirection(string command, char direction)
+        public void ChangeDirection(string command)
         {
             if(direction == 'e')
             {
                 if(command == "l")
                 {
+                    Console.WriteLine("In east changing left");
                     direction = 'n';
                 }
                 if(command == "r")
@@ -107,11 +108,11 @@ namespace MarsRover
                 }
             }
 
-            if (direction == 'w')
+            else if (direction == 'w')
             {
-                if (command == "s")
+                if (command == "l")
                 {
-                    direction = 'n';
+                    direction = 's';
                 }
                 if (command == "r")
                 {
@@ -119,7 +120,7 @@ namespace MarsRover
                 }
             }
 
-            if (direction == 'n')
+            else if (direction == 'n')
             {
                 if (command == "l")
                 {
@@ -131,7 +132,7 @@ namespace MarsRover
                 }
             }
 
-            if (direction == 's')
+            else if (direction == 's')
             {
                 if (command == "l")
                 {
@@ -141,6 +142,10 @@ namespace MarsRover
                 {
                     direction = 'w';
                 }
+            }
+            else
+            {
+                throw new ArgumentException();
             }
         }
     }

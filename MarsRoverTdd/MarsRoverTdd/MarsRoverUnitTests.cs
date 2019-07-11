@@ -13,8 +13,8 @@ namespace MarsRoverTdd
     {
         Rover rover = new Rover(new int[] { 0, 0 }, 'e', new int[] { 100, 100 });
 
-        [Test]
-        public void a_Command_forward_fromEast_MovesRoverToZeroOneFromZeroZeroByAddingOneToYAxis()
+        [Test]// Tests to change location
+        public void a_Command_forward_fromEast_MovesRoverAddingOneToYAxis()
         {
 
             string command = "f";
@@ -29,7 +29,7 @@ namespace MarsRoverTdd
         }
 
         [Test]
-        public void b_Command_backward_FromEast_MovesRoverBackWardsInReverseDirectionToZeroZeroFromZeroOne_SubtractingOneFromYAxis()
+        public void b_Command_backward_FromEast_MovesRoverBackWardsInReverseDirectionSubtractingOneFromYAxis()
         {
 
             string command = "b";
@@ -44,7 +44,7 @@ namespace MarsRoverTdd
         }
 
         [Test]
-        public void c_Command_forward_FromWest_MovesRoverForwardToZeroMinusOneFromZeroZero_SubtractingOneFromYAxis()
+        public void c_Command_forward_FromWest_MovesRoverForwardSubtractingOneFromYAxis()
         {
             rover.direction = 'w';
             string command = "f";
@@ -59,7 +59,7 @@ namespace MarsRoverTdd
         }
 
         [Test]
-        public void d_Command_backward_FromWest_MovesRoverBackwardToZeroOneFromZeroMinusOne_AddingOneToYAxis()
+        public void d_Command_backward_FromWest_MovesRoverBackwardAddingOneToYAxis()
         {
             //rover.direction = 'w';
             string command = "b";
@@ -141,14 +141,99 @@ namespace MarsRoverTdd
 
         }
 
-        [Test]
+        [Test] // tests to change direction of Rover
         public void i1_CommandLeft_ChangesDirectionFrom_East_ToNorth()
         {
-            rover.direction = 'e';
+            rover.direction = 'e';// reset direction from above test case's direction
             string command = "l";
-            rover.ChangeDirection(command, rover.direction);
-
+            rover.PrintStatus();
+            rover.ChangeDirection(command);
+            rover.PrintStatus();
             char expectedDirection = 'n';
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test]
+        public void i2_CommandRight_ChangesDirectionFrom_East_ToSouth()
+        {
+            rover.direction = 'e';
+            string command = "r";
+            rover.PrintStatus();
+            rover.ChangeDirection(command);
+            rover.PrintStatus();
+            char expectedDirection = 's';
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test]
+        public void j1_CommandLeft_ChangesDirectionFrom_West_ToSouth()
+        {
+            rover.direction = 'w';
+            string command = "l";
+            rover.PrintStatus();
+            rover.ChangeDirection(command);
+            rover.PrintStatus();
+            char expectedDirection = 's';
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test]
+        public void j2_CommandRight_ChangesDirectionFrom_West_ToNorth()
+        {
+            rover.direction = 'w';
+            string command = "r";
+            rover.PrintStatus();
+            rover.ChangeDirection(command);
+            rover.PrintStatus();
+            char expectedDirection = 'n';
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test]
+        public void k1_CommandLeft_ChangesDirectionFrom_North_ToWest()
+        {
+            rover.direction = 'n';
+            string command = "l";
+            rover.PrintStatus();
+            rover.ChangeDirection(command);
+            rover.PrintStatus();
+            char expectedDirection = 'w';
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test]
+        public void k2_CommandRight_ChangesDirectionFrom_North_ToEast()
+        {
+            rover.direction = 'n';
+            string command = "r";
+            rover.PrintStatus();
+            rover.ChangeDirection(command);
+            rover.PrintStatus();
+            char expectedDirection = 'e';
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test]
+
+        public void l1_CommandLeft_ChangesDirectionFrom_South_ToEast()
+        {
+            rover.direction = 's';
+            string command = "l";
+            rover.ChangeDirection(command);
+
+            char expectedDirection = 'e';
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test]
+
+        public void l2_CommandRight_ChangesDirectionFrom_South_ToWest()
+        {
+            rover.direction = 's';
+            string command = "r";
+            rover.ChangeDirection(command);
+            char expectedDirection = 'w';
+            
             Assert.AreEqual(expectedDirection, rover.direction);
         }
     }
