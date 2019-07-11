@@ -25,14 +25,72 @@ namespace MarsRover
 
         public void Move(string command)
         {
-            if(command.Length == 1)
+            if(direction == 'e')
             {
-                if (command == "e")
+                if (command == "f")
+                {
+                    Console.WriteLine("in east forward");
+                    location[1] += 1;
+                }
+
+                if (command == "b")
+                {
+                    Console.WriteLine("in east backward");
+                    location[1] -= 1;
+                }
+            }
+
+            if(direction == 'w')
+            {
+                if (command == "f")
+                {
+                    location[1] -= 1;
+                }
+
+                if (command == "b")
                 {
                     location[1] += 1;
-                }               
-                Console.WriteLine("location " + String.Join(",", location));
+                }
             }
+            
+            if(direction == 's')
+            {
+                if(command == "f")
+                {
+                    location[0] += 1;
+                }
+
+                if(command == "b")
+                {
+                    location[0] -= 1;
+                }
+            }
+
+            if(direction == 'n')
+            {
+                if(command == "f")
+                {
+                    location[0] -= 1;
+                }
+                if(command == "b")
+                {
+                    location[0] += 1;
+                }
+            }
+               
         }
+        
+        public void PrintStatus()
+        {
+            Console.WriteLine("I am facing " + direction);
+            Console.WriteLine("my location is " + String.Join(",",location));
+        }
+        /*
+        public void ResetLocation()
+        {
+            location[0] = 0;
+            location[1] = 0;
+        }
+        */
     }
 }
