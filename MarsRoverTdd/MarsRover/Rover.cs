@@ -148,5 +148,24 @@ namespace MarsRover
                 throw new ArgumentException();
             }
         }
+
+        public void OperateCommands(string commands)
+        {
+            for (int i = 0; i < commands.Length; i++)
+            {
+                if (commands[i] == 'f' || commands[i] == 'b')
+                {
+                    Console.WriteLine("command is " + commands[i].ToString());
+                    Move(commands[i].ToString());
+                }
+
+                if (commands[i] == 'l' || commands[i] == 'r')
+                {
+                    Console.WriteLine("command is " + commands[i].ToString());
+                    ChangeDirection(commands[i].ToString());
+                }
+
+            }
+        }
     }
 }

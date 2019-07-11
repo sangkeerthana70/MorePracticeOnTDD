@@ -236,5 +236,31 @@ namespace MarsRoverTdd
             
             Assert.AreEqual(expectedDirection, rover.direction);
         }
+
+        [Test]// EX-1 Testing rover movement using example in kata
+        public void m_RoverPositionZeroZero_FacingSouth_Commandsfflf_MovesRoverToTwoTwo()
+        {
+            rover.direction = 's';
+            string commands = "fflf";
+            rover.PrintStatus();
+            rover.OperateCommands(commands);
+            rover.PrintStatus();
+
+            int[] expectedLocation = new int[] { 2, 2 };
+            Assert.AreEqual(expectedLocation, rover.location);
+        }
+
+        [Test]// Ex-2
+        public void n_RoverPositionZeroZero_FacingEast_Commandsffrff_MovesRoverToTwoTwo()
+        {
+            rover.direction = 'e';
+            string commands = "ffrf";
+            rover.PrintStatus();
+            rover.OperateCommands(commands);
+            rover.PrintStatus();
+
+            int[] expectedLocation = new int[] { 2, 2 };
+            Assert.AreEqual(expectedLocation, rover.location);
+        }
     }
 }
