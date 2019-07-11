@@ -92,5 +92,56 @@ namespace MarsRover
             location[1] = 0;
         }
         */
+
+        public void ChangeDirection(string command, char direction)
+        {
+            if(direction == 'e')
+            {
+                if(command == "l")
+                {
+                    direction = 'n';
+                }
+                if(command == "r")
+                {
+                    direction = 's';
+                }
+            }
+
+            if (direction == 'w')
+            {
+                if (command == "s")
+                {
+                    direction = 'n';
+                }
+                if (command == "r")
+                {
+                    direction = 'n';
+                }
+            }
+
+            if (direction == 'n')
+            {
+                if (command == "l")
+                {
+                    direction = 'w';
+                }
+                if (command == "r")
+                {
+                    direction = 'e';
+                }
+            }
+
+            if (direction == 's')
+            {
+                if (command == "l")
+                {
+                    direction = 'e';
+                }
+                if (command == "r")
+                {
+                    direction = 'w';
+                }
+            }
+        }
     }
 }
