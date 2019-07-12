@@ -79,7 +79,10 @@ namespace MarsRover
             }
 
             location[0] = (location[0] + grid[0]) % grid[0];
+            Console.WriteLine("location[0] " + location[0]);
             location[1] = (location[1] + grid[1]) % grid[1];
+            Console.WriteLine("location[1] " + location[1]);
+
 
                
         }

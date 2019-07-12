@@ -48,7 +48,7 @@ namespace MarsRoverTdd
         {
             rover.direction = 'w';
             string command = "f";
-            int[] expectedLocation = new int[] { 0, -1 };
+            int[] expectedLocation = new int[] { 0, 99 };
             char expectedDirection = 'w';
             rover.PrintStatus();
             rover.Move(command);
@@ -112,7 +112,7 @@ namespace MarsRoverTdd
 
             string command = "f";
 
-            int[] expectedLocation = new int[] { -1, 0 };
+            int[] expectedLocation = new int[] { 99, 0 };
             char expectedDirection = 'n';
             rover.PrintStatus();
             rover.Move(command);
@@ -251,7 +251,7 @@ namespace MarsRoverTdd
         }
 
         [Test]// Ex-2
-        public void n_RoverPositionTwoTwo_FacingEast_Commandsffrff_MovesRoverToTwoTwo()
+        public void n_RoverPositionTwoTwo_FacingEast_Commands_ffrff_MovesRoverToTwoTwo()
         {
             rover.direction = 'e';
             string commands = "ffrff";
@@ -264,15 +264,134 @@ namespace MarsRoverTdd
         }
 
         [Test]// Ex-3
-        public void o_RoverPosition_FacingSouth_Commandsrffffffffff_MovesRoverToDesiredPosition()
+        public void o_RoverPosition_FacingSouth_Commands_rffffffffff_MovesRoverToDesiredPosition()
         {
             string commands = "rffffffffff";
             rover.PrintStatus();
             rover.OperateCommands(commands);
             rover.PrintStatus();
 
-            int [] expectedLocation = new int[] { 4, -6};
+            int [] expectedLocation = new int[] { 4, 94};
             Assert.AreEqual(expectedLocation, rover.location);
         }
+
+        // Tests to wrap one edge to another
+        [Test]// wrap  North and West From coordinates (0,0)
+        public void p1_LocationZeroZero_FacingWest_WrapsWith_OtherEdgeZero99()
+        {
+            rover.direction = 'w';
+            rover.location = new int[] { 0, 0 };
+            string commands = "f";
+            char expectedDirection = 'w'; 
+            int[] expectedLocation = new int[] { 0, 99 };
+            rover.Move(commands);
+
+            Assert.AreEqual(expectedLocation, rover.location);
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test] // wrap  North and West From coordinates (0,0)
+        public void p2_LocationZeroZero_FacingNorth_WrapsWith_OtherEdge99Zero()
+        {
+            rover.direction = 'n';
+            rover.location = new int[] { 0, 0 };
+            string commands = "f";
+            char expectedDirection = 'n';
+            int[] expectedLocation = new int[] { 99, 0 };
+            rover.Move(commands);
+
+            Assert.AreEqual(expectedLocation, rover.location);
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test] // wrap North and East From coordinates (0,99)
+        public void q1_LocationZeroNinetyNineNinetyNine_FacingEast_WrapsWith_OtherEdgeZeroZero()
+        {
+            rover.direction = 'e';
+            rover.location = new int[] { 0, 99 };
+            string commands = "f";
+            char expectedDirection = 'e';
+            int[] expectedLocation = new int[] { 0, 0 };
+            rover.Move(commands);
+
+            Assert.AreEqual(expectedLocation, rover.location);
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test] // wrap North and east From coordinates (0,99)
+        public void q2_LocationZeroNinetyNine_FacingNorth_WrapsWith_OtherEdgeNinetyNineNinetyNine()
+        {
+            rover.direction = 'n';
+            rover.location = new int[] { 0, 99 };
+            string commands = "f";
+            char expectedDirection = 'n';
+            int[] expectedLocation = new int[] { 99, 99 };
+            rover.Move(commands);
+
+            Assert.AreEqual(expectedLocation, rover.location);
+            Assert.AreEqual(expectedDirection, rover.direction);
+        }
+
+        [Test] // wrap south and west from coordinates (99,0)
+        public void r1_LocationNinetyNineZero_FacingSouth_WrapsWith_OtherEdgeZeroZero()
+        {
+            rover.direction = 's';
+            rover.location = new int[] { 99, 0 };
+            string commands = "f";
+            char expectedDirection = 's';
+            int[] expectedLocation = new int[] { 0, 0 };
+            rover.Move(commands);
+
+            Assert.AreEqual(expectedLocation, rover.location);
+            Assert.AreEqual(expectedDirection, rover.direction);
+
+        }
+
+        [Test] // wrap south and west from coordinates (99,0)
+        public void r2_LocationNinetyNineZero_FacingWest_WrapsWith_OtherEdgeNinetyNineNinetyNine()
+        {
+            rover.direction = 'w';
+            rover.location = new int[] { 99, 0 };
+            string commands = "f";
+            char expectedDirection = 'w';
+            int[] expectedLocation = new int[] { 99, 99 };
+            rover.Move(commands);
+
+            Assert.AreEqual(expectedLocation, rover.location);
+            Assert.AreEqual(expectedDirection, rover.direction);
+
+        }
+
+        [Test] // wrap south and east from coordinates (99, 99)
+        public void s1_LocationNinetyNineNinetyNine_FacingSouth_WrapsWith_OtherEdgeZeroNinetyNine()
+        {
+            rover.direction = 's';
+            rover.location = new int[] { 99, 99};
+            string commands = "f";
+            char expectedDirection = 's';
+            int[] expectedLocation = new int[] { 0, 99 };
+            rover.Move(commands);
+
+            Assert.AreEqual(expectedLocation, rover.location);
+            Assert.AreEqual(expectedDirection, rover.direction);
+
+        }
+
+        [Test] // wrap south and east from coordinates (99, 99)
+        public void s2_LocationNinetyNineNinetyNine_FacingEast_WrapsWith_OtherEdgeNinetyNineZero()
+        {
+            rover.direction = 'e';
+            rover.location = new int[] { 99, 99 };
+            string commands = "f";
+            char expectedDirection = 'e';
+            int[] expectedLocation = new int[] { 99, 0 };
+            rover.Move(commands);
+
+            Assert.AreEqual(expectedLocation, rover.location);
+            Assert.AreEqual(expectedDirection, rover.direction);
+
+        }
+
+
     }
 }
