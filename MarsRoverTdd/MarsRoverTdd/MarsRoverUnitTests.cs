@@ -238,10 +238,10 @@ namespace MarsRoverTdd
         }
 
         [Test]// EX-1 Testing rover movement using example in kata
-        public void m_RoverPositionZeroZero_FacingSouth_Commandsfflf_MovesRoverToTwoTwo()
+        public void m_RoverPositionZeroZero_FacingSouth_Commandsfflff_MovesRoverToTwoTwo()
         {
             rover.direction = 's';
-            string commands = "fflf";
+            string commands = "fflff";
             rover.PrintStatus();
             rover.OperateCommands(commands);
             rover.PrintStatus();
@@ -251,15 +251,27 @@ namespace MarsRoverTdd
         }
 
         [Test]// Ex-2
-        public void n_RoverPositionZeroZero_FacingEast_Commandsffrff_MovesRoverToTwoTwo()
+        public void n_RoverPositionTwoTwo_FacingEast_Commandsffrff_MovesRoverToTwoTwo()
         {
             rover.direction = 'e';
-            string commands = "ffrf";
+            string commands = "ffrff";
             rover.PrintStatus();
             rover.OperateCommands(commands);
             rover.PrintStatus();
 
-            int[] expectedLocation = new int[] { 2, 2 };
+            int[] expectedLocation = new int[] { 4, 4 };
+            Assert.AreEqual(expectedLocation, rover.location);
+        }
+
+        [Test]// Ex-3
+        public void o_RoverPosition_FacingSouth_Commandsrffffffffff_MovesRoverToDesiredPosition()
+        {
+            string commands = "rffffffffff";
+            rover.PrintStatus();
+            rover.OperateCommands(commands);
+            rover.PrintStatus();
+
+            int [] expectedLocation = new int[] { 4, -6};
             Assert.AreEqual(expectedLocation, rover.location);
         }
     }

@@ -77,6 +77,10 @@ namespace MarsRover
                     location[0] += 1;
                 }
             }
+
+            location[0] = (location[0] + grid[0]) % grid[0];
+            location[1] = (location[1] + grid[1]) % grid[1];
+
                
         }
         
