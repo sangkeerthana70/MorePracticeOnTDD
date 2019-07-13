@@ -264,7 +264,7 @@ namespace MarsRoverTdd
         }
 
         [Test]// Ex-3
-        public void o_RoverPosition_FacingSouth_Commands_rffffffffff_MovesRoverToDesiredPosition()
+        public void o1_RoverPosition_FacingSouth_Commands_rffffffffff_MovesRoverToDesiredPosition()
         {
             string commands = "rffffffffff";
             rover.PrintStatus();
@@ -272,6 +272,18 @@ namespace MarsRoverTdd
             rover.PrintStatus();
 
             int [] expectedLocation = new int[] { 4, 94};
+            Assert.AreEqual(expectedLocation, rover.location);
+        }
+
+        [Test]// Ex-3
+        public void o2_RoverPosition_FacingWest_Commands_lbbbbb_MovesRoverToDesiredPosition()
+        {
+            string commands = "lbbbbb";
+            rover.PrintStatus();
+            rover.OperateCommands(commands);
+            rover.PrintStatus();
+
+            int[] expectedLocation = new int[] { 99, 94 };
             Assert.AreEqual(expectedLocation, rover.location);
         }
 
