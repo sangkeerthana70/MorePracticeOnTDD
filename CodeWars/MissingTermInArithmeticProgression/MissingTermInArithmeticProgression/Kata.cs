@@ -21,14 +21,9 @@ namespace MissingTermInArithmeticProgression
                     continue;
                 }
                 else
-                {
-                    Console.WriteLine("in else");
-                    Console.WriteLine("list[i+1] " + list[i+1]);
-                    Console.WriteLine("list[i] " + list[i]);
-                    int newDifference = list[i + 1] - list[i];
-                    Console.WriteLine("newDifference " + newDifference);
-                    missingNum = list[i] + (newDifference - difference);
-                    Console.WriteLine("missingNum " + missingNum);
+                {                   
+                    int newDifference = list[i + 1] - list[i];                  
+                    missingNum = list[i] + (newDifference - difference); 
                 }
 
             }

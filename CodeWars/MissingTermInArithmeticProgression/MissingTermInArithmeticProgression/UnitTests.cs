@@ -25,6 +25,8 @@ namespace MissingTermInArithmeticProgression
         [Test, TestCaseSource("testCases")]
         public int Test(List<int> list) => Kata.FindMissing(list);
         */
+
+
         [Test]
         public void a_IntegerList_ReturnsMissingNumberInSeries()
         {
@@ -39,6 +41,24 @@ namespace MissingTermInArithmeticProgression
         {
             List<int> ints = new List<int> { 0, 5, 10, 20, 25 };
             int expected = 15;
+            int actual = Kata.FindMissing(ints);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void c_IntegerList_ReturnsMissingNumberInSeries()
+        {
+            List<int> ints = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 };
+            int expected = 10;
+            int actual = Kata.FindMissing(ints);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void d_IntegerList_ReturnsMissingNumberInSeries()
+        {
+            List<int> ints = new List<int> { 1040, 1220, 1580 };
+            int expected = 1400;
             int actual = Kata.FindMissing(ints);
             Assert.AreEqual(expected, actual);
         }
