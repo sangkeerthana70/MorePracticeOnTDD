@@ -21,7 +21,7 @@ namespace StopgninnipSMysdroW
             }
 
             string[] words = sentence.Split(' ');
-            Console.WriteLine("words " + string.Join(" ", words));
+            //Console.WriteLine("words " + string.Join(" ", words));
 
             string reversed = "";
             for(int i = 0; i < words.Length; i++)
@@ -37,7 +37,6 @@ namespace StopgninnipSMysdroW
                     reversed += words[i] + " ";
                 }
             }
-            //return String.Join(" ", reversed);
             return reversed.TrimEnd();
         }
     }
